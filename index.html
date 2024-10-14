@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lone River</title>
+    <style>
+        body {
+            background: #000;
+            color: #fff;
+            text-align: center;
+            overflow: hidden;
+        }
+        .scene {
+            display: none; /* Hide all scenes by default */
+        }
+        .active {
+            display: block; /* Show the active scene */
+        }
+        h1 {
+            font-style: italic;
+            font-size: 20px;
+            font-family: Georgia, serif;
+        }
+        a {
+            text-decoration: none;
+            font-size: 10px;
+            font-family: Verdana, sans-serif;
+            color: #fff;
+        }
+        a:hover {
+            color: #ccc;
+        }
+        #oc1, #s1, #nw1, #ww1, #l1 {
+            width: 1080px;
+            height: 720px;
+            border: none;
+            background-size: cover;
+            margin: 20px auto;
+            position: relative;
+        }
+        #oc1 {
+            background: url("http://i.imgur.com/FBNAEr2.png") no-repeat;
+        }
+        #s1 {
+            background: url("https://i.imgur.com/rM7vXwQ.png") no-repeat;
+        }
+
+        #nw1 {
+            background: url("http://i.imgur.com/AaTTiQA.png") no-repeat;
+        }
+        #ww1 {
+            background: url("https://i.imgur.com/ndc1x5z.png") no-repeat;
+        }
+        #l1 {
+            background: url("https://i.imgur.com/Ciy0OIg.png") no-repeat;
+        }
+
+        .wolf {
+            width: 507px;
+            height: 285px;
+            background: url("http://i.imgur.com/hv0sxNi.png") no-repeat;
+            position: absolute;
+            bottom: 90px;
+            right: 192px;
+            cursor: pointer;
+        }
+        .wolf:hover {
+            background: url("http://i.imgur.com/gaIyYey.png") no-repeat;
+        }
+        .swolfl {
+            width: 103px;
+            height: 93px;
+            background: url("https://i.imgur.com/d84ieK7.png") no-repeat;
+            position: absolute;
+            bottom: 423px;
+            right: 323px;
+            cursor: pointer; 
+        }
+        .swolfl:hover {
+            background: url("https://i.imgur.com/8De8Ubm.png") no-repeat;
+        }
+
+        .navc {
+            position: absolute;
+            bottom: 59px;
+            right: 62px;
+height:55px;
+width:57px;
+background: url("https://i.imgur.com/earjl4i.png") no-repeat;
+        }
+        .navn {
+            position: absolute;
+            bottom: 112px;
+            right: 78px;
+        }
+        .navnw {
+            position: absolute;
+            bottom: 100px;
+            right: 112px;
+        }
+
+        .navw {
+            position: absolute;
+            bottom: 69px;
+            right: 121px;
+        }
+        .navsw {
+            position: absolute;
+            bottom: 40px;
+            right: 109px;
+        }
+
+        .navs {
+            position: absolute;
+            bottom: 9px;
+            right: 80px;
+        }
+        .navse {
+            position: absolute;
+            bottom: 37px;
+            right: 52px;
+        }
+        .nave {
+            position: absolute;
+            bottom: 69px;
+            right: 10px;
+        }
+        .navne {
+            position: absolute;
+            bottom: 97px;
+            right: 41px;
+        }
+
+
+        /* Modal styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed;
+            z-index: 1001; /* Sit on top of overlay */
+            left: 50%;
+            top: 40%;
+            transform: translate(-50%, -50%);
+            background-color: #c7c5c1;
+            padding: 20px;
+            width: 400px;
+            height: auto;
+            color: #000;
+text-align:left;
+            overflow: auto; /* Allow scrolling if content exceeds */
+        }
+        .modal-header {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .close-btn {
+            cursor: pointer;
+            color: #000;
+            float: right;
+        }
+        /* Overlay styles */
+        .overlay {
+            display: none; /* Hidden by default */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000; /* Sit below modal */
+        }
+    </style>
+</head>
+<body>
+
+<div id="oc1" class="scene active">
+    <a href="#s1" class="navn" onclick="showScene('s1'); return false;">
+        <img src="https://i.imgur.com/Qv7MTLy.png" alt="North">
+    </a>
+    <a href="#ww1" class="navnw" onclick="showScene('ww1'); return false;">
+        <img src="https://i.imgur.com/dHOruss.png" alt="Northwest">
+    </a>
+    <a href="#l1" class="navne" onclick="showScene('l1'); return false;">
+        <img src="https://i.imgur.com/RnZXmsK.png" alt="Northeast">
+    </a>
+
+<div class="navc"></div>
+</div>
+
+
+<div id="s1" class="scene">
+    <a href="#nw1" class="navn" onclick="showScene('nw1'); return false;">
+        <img src="https://i.imgur.com/Qv7MTLy.png" alt="North">
+    </a>
+    <a href="#ww1" class="navw" onclick="showScene('ww1'); return false;">
+        <img src="https://i.imgur.com/AGBbSsg.png" alt="West,">
+    </a>
+
+    <a href="#oc1" class="navs" onclick="showScene('oc1'); return false;">
+        <img src="https://i.imgur.com/qfDV1nd.png" alt="South,">
+    </a>
+    <a href="#l1" class="nave" onclick="showScene('l1'); return false;">
+        <img src="https://i.imgur.com/hJ7rFC6.png" alt="East,">
+    </a>
+
+<div class="navc"></div>
+</div>
+
+<div id="ww1" class="scene">
+    <a href="#nw1" class="navne" onclick="showScene('nw1'); return false;">
+        <img src="https://i.imgur.com/RnZXmsK.png" alt="Northeast">
+    </a>
+    <a href="#s1" class="nave" onclick="showScene('s1'); return false;">
+        <img src="https://i.imgur.com/hJ7rFC6.png" alt="East">
+    </a>
+
+    <a href="#oc1" class="navse" onclick="showScene('oc1'); return false;">
+        <img src="https://i.imgur.com/qKZMEx0.png" alt="Southeast">
+    </a>
+<div class="navc"></div>
+</div>
+
+<div id="l1" class="scene">
+    <a href="#nw1" class="navnw" onclick="showScene('nw1'); return false;">
+        <img src="https://i.imgur.com/dHOruss.png" alt="Northwest">
+    </a>
+    <a href="#s1" class="navw" onclick="showScene('s1'); return false;">
+        <img src="https://i.imgur.com/AGBbSsg.png" alt="West,">
+    </a>
+
+    <a href="#oc1" class="navsw" onclick="showScene('oc1'); return false;">
+        <img src="https://i.imgur.com/oVQeab2.png" alt="Southwest,">
+    </a>
+<div class="navc"></div>
+    <div class="swolfl" onclick="showModal('swolf1m');"></div>
+</div>
+</div>
+
+<div id="swolf1m" class="modal">
+    <div class="modal-header">
+        <span class="close-btn" onclick="closeModal('swolf1m');">&times;</span>
+        September 8th, 1993
+    </div>
+    <div class="modal-content">
+        <p><img src="https://i.imgur.com/c9Jvfmi.png" width="400"></p><p>
+The water is clear and still. I can see myself reflected with startling clarity; it's been a while since I've seen a person's face. Across the lake lies only open forest, deep blue pines and an empty sun.</p>
+The wolves are out today. Gone, I mean. Perhaps they, too, have run to lonelier forests, to solitude, to sorrow, from sorrow. So it goes.
+    </div>
+</div>
+
+
+<div id="nw1" class="scene">
+    <a href="#s1" class="navs" onclick="showScene('s1'); return false;">
+        <img src="https://i.imgur.com/qfDV1nd.png" alt="South,">
+    </a>
+    <a href="#l1" class="navse" onclick="showScene('l1'); return false;">
+        <img src="https://i.imgur.com/qKZMEx0.png" alt="Southeast">
+    </a>
+    <a href="#ww1" class="navsw" onclick="showScene('ww1'); return false;">
+        <img src="https://i.imgur.com/oVQeab2.png" alt="Southwest,">
+    </a>
+
+<div class="navc"></div>
+    <div class="wolf" onclick="showModal('modal');"></div>
+</div>
+
+<div id="overlay" class="overlay"></div>
+<div id="modal" class="modal">
+    <div class="modal-header">
+        <span class="close-btn" onclick="closeModal('modal');">&times;</span>
+        October 2nd, 1993
+    </div>
+    <div class="modal-content">
+        <p>It was cold this morning. I saw Cress and Flax curled up together, breathing in tandem in a clutch of reeds. Cress's snout was tucked up under Flax's chin with agonizing tenderness; nearby a moth made a pass at a pair of cattails. I think that's when I started crying.
+</p><p>How can you hold my hand the way you do and not feel like you're dying?</p>    </div>
+</div>
+
+<script>
+    function showScene(sceneId) {
+        const scenes = document.querySelectorAll('.scene');
+        scenes.forEach(scene => {
+            scene.classList.remove('active');
+        });
+        document.getElementById(sceneId).classList.add('active');
+    }
+
+    function showModal(modalId) {
+        document.getElementById(modalId).style.display = 'block';
+        document.getElementById('overlay').style.display = 'block';
+    }
+
+    function closeModal(modalId) {
+        document.getElementById(modalId).style.display = 'none';
+        document.getElementById('overlay').style.display = 'none';
+    }
+
+
+    // Close modal when clicking outside of it
+    window.onclick = function(event) {
+        const modal = document.getElementById('modal');
+        const overlay = document.getElementById('overlay');
+        if (event.target == overlay) {
+            closeModal();
+        }
+    }
+</script>
+
+</body>
+</html>
