@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lone River</title>
+<link rel="icon" href="https://i.imgur.com/earjl4i.png">
+
     <style>
         body {
             background: #000;
@@ -11,14 +13,19 @@
             text-align: center;
             overflow: hidden;
         }
+        a {color:#8b8880;
+        text-decoration:none;}
+        a:hover, a:visited{color:#6d6a62;}
         .scene {
-            display: none; /* Hide all scenes by default */
+            display: none; 
         }
         .active {
-            display: block; /* Show the active scene */
+            display: block; 
         }
-mark { background-color: black; color: black; }
-        #in1, #in2, #oc0, #ic1, #oc1, #s1, #nw1, #ww1, #l1, #ic2, #oc2, #s2, #nw2, #ww2, #l2, #ic3, #oc3, #s3, #nw3, #ww3, #l3 {
+        mark { 
+            background-color: black; color: black; 
+        }
+        #in1, #in2, #ic1, #oc1, #s1, #nw1, #ww1, #l1, #ic2, #oc2, #s2, #nw2, #ww2, #l2, #ic3, #oc3, #s3, #nw3, #ww3, #icn, #ocn, #sn, #nwn, #l3, #e1, #e2, #e3, #e4 {
             width: 1280px;
             height: 720px;
             border: none;
@@ -32,16 +39,28 @@ mark { background-color: black; color: black; }
             font-weight:normal;
         letter-spacing:1px;}
 
-        #in1, #i2 {
+        #in1, #in2, #e4, #e5 {
             background: url("https://i.imgur.com/zrUmpPv.png") no-repeat;
+        }
+        #icn {
+            background: url("https://i.imgur.com/shIBqq4.png") no-repeat;
+        }
+        #ocn {
+            background: url("https://i.imgur.com/h2TKf1k.png") no-repeat;
+        }
+        #sn {
+            background: url("https://i.imgur.com/ISQEY0g.png") no-repeat;
+        }
+        #nwn {
+            background: url("https://i.imgur.com/aKERE65.png") no-repeat;
         }
         
         #ic1, #ic2, #ic3 {
             background: url("https://i.imgur.com/nfh4rr9.png") no-repeat;
         }
         
-        #oc0, #oc1, #oc2, #oc3 {
-            background: url("https://i.imgur.com/llYxH2k.png") no-repeat;
+        #oc1, #oc2, #oc3 {
+            background: url("https://i.imgur.com/Om4jQrz.png") no-repeat;
         }
         #s1, #s2, #s3 {
             background: url("https://i.imgur.com/MKL3LCA.png") no-repeat;
@@ -56,7 +75,16 @@ mark { background-color: black; color: black; }
         #l1, #l2, #l3 {
             background: url("https://i.imgur.com/F4QFV17.png") no-repeat;
         }
-.wolfoc1 {            width: 70px;
+        #e1 {
+            background: url("https://i.imgur.com/kJqY3IG.png") no-repeat;
+        }
+        #e2 {
+            background: url("https://i.imgur.com/ZqW6qA6.png") no-repeat;
+        }
+        #e3 {
+            background: url("https://i.imgur.com/zkakZIB.png") no-repeat;
+        }
+    .wolfoc1 {            width: 70px;
             height: 86px;
             background: url("https://i.imgur.com/9KvPEaq.png") no-repeat;
             position: absolute;
@@ -67,7 +95,7 @@ mark { background-color: black; color: black; }
         .wolfoc1:hover {
             background: url("https://i.imgur.com/atf1fQJ.png") no-repeat;
         }
-.crow {            width: 46px;
+    .crow {            width: 46px;
             height: 62px;
             background: url("https://i.imgur.com/NJrDe9o.png") no-repeat;
             position: absolute;
@@ -79,7 +107,7 @@ mark { background-color: black; color: black; }
             background: url("https://i.imgur.com/w62Myxw.png") no-repeat;
         }
 
-.chevril {            width: 197px;
+    .chervil {            width: 197px;
             height: 188px;
             background: url("https://i.imgur.com/T5pdTxm.png") no-repeat;
             position: absolute;
@@ -87,35 +115,59 @@ mark { background-color: black; color: black; }
             left: 30px;
             cursor: pointer;
         }
-        .chevril:hover {
+        .chervil:hover {
             background: url("https://i.imgur.com/u0XqtLp.png") no-repeat;
         }
 
-.swolfnw1 {            width: 42px;
-            height: 99px;
-            background: url("https://i.imgur.com/LKJRXmy.png") no-repeat;
+    .tracks {            width: 253px;
+            height: 230px;
+            background: url("https://i.imgur.com/0cRYr6k.png") no-repeat;
             position: absolute;
-            top: 205px;
-            left: 404px;
+            bottom: 100px;
+            left: 500px;
+            cursor: pointer;
+        }
+        .tracks:hover {
+            background: url("https://i.imgur.com/3XYRITO.png") no-repeat;
+        }
+
+    .swolfnw1 {            width: 44px;
+            height: 72px;
+            background: url("https://i.imgur.com/Lah3j9f.png") no-repeat;
+            position: absolute;
+            top: 33px;
+            left: 405px;
             cursor: pointer;
         }
         .swolfnw1:hover {
-            background: url("https://i.imgur.com/zeGwIlt.png") no-repeat;
+            background: url("https://i.imgur.com/TBR1gr6.png") no-repeat;
         }
 
-        .wolfnw2 {
-            width: 509px;
-            height: 307px;
-            background: url("https://i.imgur.com/51ArVB2.png") no-repeat;
+    .wolfnw2 {
+            width: 507px;
+            height: 291px;
+            background: url("https://i.imgur.com/eBN0pRY.png") no-repeat;
             position: absolute;
-            bottom: 130px;
-            right: 388px;
+            bottom: 132px;
+            right: 392px;
             cursor: pointer;
         }
         .wolfnw2:hover {
-            background: url("https://i.imgur.com/7aOTrHy.png") no-repeat;
+            background: url("https://i.imgur.com/eyxh5SO.png") no-repeat;
         }
-  .odoor {
+    .mulberry {
+            width: 311px;
+            height: 166px;
+            background: url("https://i.imgur.com/Z1yBhmV.png") no-repeat;
+            position: absolute;
+            top: 295px;
+            right: 142px;
+            cursor: pointer;
+        }
+        .mulberry:hover {
+            background: url("https://i.imgur.com/nrez33C.png") no-repeat;
+        }
+    .odoor {
             width: 109px;
             height: 214px;
             background: url("https://i.imgur.com/gmRsycJ.jpeg") no-repeat;
@@ -128,7 +180,7 @@ mark { background-color: black; color: black; }
             background: url("https://i.imgur.com/ie7NBc1.jpeg") no-repeat;
         }
 
-.idoor {
+    .idoor {
             width: 106px;
             height: 408px;
             background: url("https://i.imgur.com/RkvQMfe.jpeg") no-repeat;
@@ -140,31 +192,650 @@ mark { background-color: black; color: black; }
         .idoor:hover {
             background: url("https://i.imgur.com/1jTOJiS.jpeg") no-repeat;
         }
+    .fplace1 {
+            width: 554px;
+            height: 291px;
+            background: url("https://i.imgur.com/5NCWLkl.jpeg") no-repeat;
+            position: absolute;
+            top: 72px;
+            left: 321px;
+            cursor: pointer;
+        }
+        .fplace1:hover {
+            background: url("https://i.imgur.com/6qKPs15.jpeg") no-repeat;
+        }
+    .fplace2 {
+            width: 554px;
+            height: 291px;
+            background: url("https://i.imgur.com/TXXSEXX.jpeg") no-repeat;
+            position: absolute;
+            top: 72px;
+            left: 321px;
+            cursor: pointer;
+        }
+        .fplace2:hover {
+            background: url("https://i.imgur.com/0ADcVwj.jpeg") no-repeat;
+        }
+    .fplace3 {
+            width: 554px;
+            height: 291px;
+            background: url("https://i.imgur.com/oB4Az9t.jpeg") no-repeat;
+            position: absolute;
+            top: 72px;
+            left: 321px;
+            cursor: pointer;
+        }
+        .fplace3:hover {
+            background: url("https://i.imgur.com/fXPVNUa.jpeg") no-repeat;
+        }
+    .lantern {
+            width: 66px;
+            height: 105px;
+            background: url("https://i.imgur.com/Zu4msZ6.png") no-repeat;
+            position: absolute;
+            top: 263px;
+            right: 346px;
+            cursor: pointer;
+        }
+        .lantern:hover {
+            background: url("https://i.imgur.com/9QabwDz.png") no-repeat;
+        }
+    .files {
+            width: 414px;
+            height: 170px;
+            background: url("https://i.imgur.com/32dAB4i.png") no-repeat;
+            position: absolute;
+            top: 413px;
+            left: 25px;
+            cursor: pointer;
+        }
+        .files:hover {
+            background: url("https://i.imgur.com/iUhjX36.png") no-repeat;
+        }
+    .blankets {
+            width: 316px;
+            height: 127px;
+            background: url("https://i.imgur.com/wJVBAMp.png") no-repeat;
+            position: absolute;
+            top: 295px;
+            left: 18px;
+            cursor: pointer;
+        }
+        .blankets:hover {
+            background: url("https://i.imgur.com/TIPoQyP.png") no-repeat;
+        }
+    .mug {
+            width: 65px;
+            height: 69px;
+            background: url("https://i.imgur.com/470uH3I.png") no-repeat;
+            position: absolute;
+            top: 383px;
+            left: 136px;
+            cursor: pointer;
+        }
+        .mug:hover {
+            background: url("https://i.imgur.com/6zpU4oc.png") no-repeat;
+        }
+    .tools {
+            width: 98px;
+            height: 212px;
+            background: url("https://i.imgur.com/L07PYQC.png") no-repeat;
+            position: absolute;
+            bottom: 63px;
+            left: 486px;
+            cursor: pointer;
+        }
+        .tools:hover {
+            background: url("https://i.imgur.com/Eazg1fn.png") no-repeat;
+        }
+    .buckets {
+            width: 94px;
+            height: 80px;
+            background: url("https://i.imgur.com/Gm80Uis.png") no-repeat;
+            position: absolute;
+            bottom: 83px;
+            right: 404px;
+            cursor: pointer;
+        }
+        .buckets:hover {
+            background: url("https://i.imgur.com/jIe84mg.png") no-repeat;
+        }
+    .stones {
+            width: 195px;
+            height: 103px;
+            background: url("https://i.imgur.com/CUyHap2.png") no-repeat;
+            position: absolute;
+            top: 275px;
+            right: 604px;
+            cursor: pointer;
+        }
+        .stones:hover {
+            background: url("https://i.imgur.com/S6HuRBc.png") no-repeat;
+        }
+    .deer {
+            width: 282px;
+            height: 235px;
+            background: url("https://i.imgur.com/BY7Y38G.png") no-repeat;
+            position: absolute;
+            top: 5px;
+            right: 470px;
+            cursor: pointer;
+        }
+        .deer:hover {
+            background: url("https://i.imgur.com/0BZSkQw.png") no-repeat;
+        }
+    .cedar {
+            width: 418px;
+            height: 216px;
+            background: url("https://i.imgur.com/dtXIkZd.png") no-repeat;
+            position: absolute;
+            bottom: 0px;
+            left: 290px;
+            cursor: pointer;
+        }
+        .cedar:hover {
+            background: url("https://i.imgur.com/1ngHdhj.png") no-repeat;
+        }   
+    .hollow {
+            width: 302px;
+            height: 259px;
+            background: url("https://i.imgur.com/mQY9x75.png") no-repeat;
+            position: absolute;
+            bottom: 76px;
+            right: 220px;
+            cursor: pointer;
+        }
+        .hollow:hover {
+            background: url("https://i.imgur.com/LJWhE3R.png") no-repeat;
+        }
+    .dragonflies {
+            width: 107px;
+            height: 69px;
+            background: url("https://i.imgur.com/ukyZnba.png") no-repeat;
+            position: absolute;
+            top: 216px;
+            right: 360px;
+            cursor: pointer;
+        }
+        .dragonflies:hover {
+            background: url("https://i.imgur.com/ZPYr1Y9.png") no-repeat;
+        }
 
-        .swolfl3 {
-            width: 103px;
-            height: 93px;
-            background: url("https://i.imgur.com/d84ieK7.png") no-repeat;
+    .wolfl1 {
+            width: 134px;
+            height: 143px;
+            background: url("https://i.imgur.com/NVss3PW.png") no-repeat;
+            position: absolute;
+            top: 203px;
+            left: 6px;
+            cursor: pointer;
+        }
+        .wolfl1:hover {
+            background: url("https://i.imgur.com/bKKH5fJ.png") no-repeat;
+        }
+
+
+        /* September divs */
+    
+    .boots {
+            width: 148px;
+            height: 218px;
+            background: url("https://i.imgur.com/tY1PNDH.png") no-repeat;
+            position: absolute;
+            bottom: 0px;
+            right: 0px;
+            cursor: pointer;
+        }
+        .boots:hover {
+            background: url("https://i.imgur.com/gJgCYTI.png") no-repeat;
+        }
+    
+    .cfphoto {
+            width: 95px;
+            height: 39px;
+            background: url("https://i.imgur.com/mxz2cem.png") no-repeat;
+            position: absolute;
+            bottom: 236px;
+            left: 220px;
+            cursor: pointer;
+            z-index:1;
+        }
+        .cfphoto:hover {
+            background: url("https://i.imgur.com/bjL31Ya.png") no-repeat;
+        }
+
+    .jvphoto {
+            width: 73px;
+            height: 46px;
+            background: url("https://i.imgur.com/S6zw2nu.png") no-repeat;
+            position: absolute;
+            bottom: 224px;
+            left: 120px;
+            cursor: pointer;
+        }
+        .jvphoto:hover {
+            background: url("https://i.imgur.com/0RKrS2s.png") no-repeat;
+        }
+    .envelope {
+            width: 192px;
+            height: 110px;
+            background: url("https://i.imgur.com/KegcKrn.png") no-repeat;
+            position: absolute;
+            bottom: 186px;
+            left: 160px;
+        }
+
+    .mugs {
+            width: 141px;
+            height: 89px;
+            background: url("https://i.imgur.com/fGIWD9q.png") no-repeat;
+            position: absolute;
+            bottom: 136px;
+            left: 50px;
+            cursor: pointer;
+        }
+        .mugs:hover {
+            background: url("https://i.imgur.com/KWAEfRz.png") no-repeat;
+        }
+    .logs {
+            width: 319px;
+            height: 217px;
+            background: url("https://i.imgur.com/F0JUIoR.png") no-repeat;
+            position: absolute;
+            bottom: 54px;
+            left: 480px;
+            cursor: pointer;
+        }
+        .logs:hover {
+            background: url("https://i.imgur.com/ykCVgTJ.png") no-repeat;
+        }
+    .squirrels {
+            width: 118px;
+            height: 187px;
+            background: url("https://i.imgur.com/xeEK93o.png") no-repeat;
+            position: absolute;
+            top: 15px;
+            right: 460px;
+            cursor: pointer;
+        }
+        .squirrels:hover {
+            background: url("https://i.imgur.com/nLfGPmX.png") no-repeat;
+        }
+    .ducks {
+            width: 117px;
+            height: 62px;
+            background: url("https://i.imgur.com/0y2itSE.png") no-repeat;
+            position: absolute;
+            top: 215px;
+            left: 87px;
+            cursor: pointer;
+        }
+        .ducks:hover {
+            background: url("https://i.imgur.com/NvBBf8E.png") no-repeat;
+        }
+    .stick {
+            width: 194px;
+            height: 207px;
+            background: url("https://i.imgur.com/QMLbAXl.png") no-repeat;
+            position: absolute;
+            bottom: 57px;
+            right: 540px;
+            cursor: pointer;
+        }
+        .stick:hover {
+            background: url("https://i.imgur.com/FpaaLZn.png") no-repeat;
+        }
+    .swolfww2 {
+            width: 134px;
+            height: 96px;
+            background: url("https://i.imgur.com/AEkcB5e.png") no-repeat;
+            position: absolute;
+            top: 127px;
+            left: 84px;
+            cursor: pointer;
+            z-index:1;
+        }
+        .swolfww2:hover {
+            background: url("https://i.imgur.com/lcq9AQ3.png") no-repeat;
+        }
+    .pack {
+            width: 1078px;
+            height: 525px;
+            background: url("https://i.imgur.com/V8QSA34.png") no-repeat;
+            position: absolute;
+            bottom: 0px;
+            left: 36px;
+            cursor: pointer;
+        }
+        .pack:hover {
+            background: url("https://i.imgur.com/UXFLCM4.png") no-repeat;
+        }
+    .thatch {
+            width: 383px;
+            height: 261px;
+            background: url("https://i.imgur.com/yGU7Heq.png") no-repeat;
+            position: absolute;
+            top: 220px;
+            right: 204px;
+            cursor: pointer;
+        }
+        .thatch:hover {
+            background: url("https://i.imgur.com/MUEeYaG.png") no-repeat;
+        }
+    .swolfl2 {
+            width: 24px;
+            height: 31px;
+            background: url("https://i.imgur.com/VfWHB4d.png") no-repeat;
+            position: absolute;
+            top: 112px;
+            left: 204px;
+            cursor: pointer;
+        }
+        .swolfl2:hover {
+            background: url("https://i.imgur.com/ni13BaQ.png") no-repeat;
+        }
+        
+        
+        /* October divs */
+
+    .swolfic3 {
+            width: 90px;
+            height: 98px;
+            background: url("https://i.imgur.com/xK72agl.png") no-repeat;
+            position: absolute;
+            top: 26px;
+            left: 12px;
+            cursor: pointer;
+        }
+        .swolfic3:hover {
+            background: url("https://i.imgur.com/Bq8yp1g.png") no-repeat;
+        }
+    .spill {
+            width: 178px;
+            height: 203px;
+            background: url("https://i.imgur.com/y71BOvq.png") no-repeat;
+            position: absolute;
+            bottom: 0px;
+            left: 210px;
+            cursor: pointer;
+        }
+        .spill:hover {
+            background: url("https://i.imgur.com/Zo6AeDs.png") no-repeat;
+        }
+        
+    .letters {
+            width: 339px;
+            height: 133px;
+            background: url("https://i.imgur.com/6yTkETu.png") no-repeat;
+            position: absolute;
+            top: 416px;
+            left: 32px;
+            cursor: pointer;
+        }
+        .letters:hover {
+            background: url("https://i.imgur.com/jRp3PN9.png") no-repeat;
+        }
+    .blankets2 {
+            width: 131px;
+            height: 109px;
+            background: url("https://i.imgur.com/Zp6uMY4.png") no-repeat;
+            position: absolute;
+            bottom: 0px;
+            left: 664px;
+            cursor: pointer;
+        }
+        .blankets2:hover {
+            background: url("https://i.imgur.com/nt0fieN.png") no-repeat;
+        }
+    .swolfoc3 {
+            width: 45px;
+            height: 59px;
+            background: url("https://i.imgur.com/3lcKMwC.png") no-repeat;
+            position: absolute;
+            top: 28px;
+            left: 355px;
+            cursor: pointer;
+        }
+        .swolfoc3:hover {
+            background: url("https://i.imgur.com/6AoTImz.png") no-repeat;
+        }
+    .chair {
+            width: 147px;
+            height: 109px;
+            background: url("https://i.imgur.com/kfrsQtn.png") no-repeat;
+            position: absolute;
+            bottom: 20px;
+            left: 684px;
+            cursor: pointer;
+        }
+        .chair:hover {
+            background: url("https://i.imgur.com/jYMAHmF.png") no-repeat;
+        }
+    .cfwrestle {
+            width: 634px;
+            height: 305px;
+            background: url("https://i.imgur.com/cbtp2e5.png") no-repeat;
+            position: absolute;
+            bottom: 48px;
+            left: 66px;
+            cursor: pointer;
+        }
+        .cfwrestle:hover {
+            background: url("https://i.imgur.com/8w9fj1Y.png") no-repeat;
+        }
+    .bones {
+            width: 63px;
+            height: 32px;
+            background: url("https://i.imgur.com/kLI6arw.png") no-repeat;
+            position: absolute;
+            bottom: 364px;
+            right: 408px;
+            cursor: pointer;
+        }
+        .bones:hover {
+            background: url("https://i.imgur.com/VyTJW1j.png") no-repeat;
+        }
+    .squirrel {
+            width: 41px;
+            height: 94px;
+            background: url("https://i.imgur.com/hoOG3yW.png") no-repeat;
+            position: absolute;
+            top: 50px;
+            right: 248px;
+            cursor: pointer;
+        }
+        .squirrel:hover {
+            background: url("https://i.imgur.com/aV44Nro.png") no-repeat;
+        }
+    .swolfww3 {
+            width: 354px;
+            height: 166px;
+            background: url("https://i.imgur.com/kvooRdm.png") no-repeat;
+            position: absolute;
+            top: 60px;
+            left: 312px;
+            cursor: pointer;
+        }
+        .swolfww3:hover {
+            background: url("https://i.imgur.com/NiOj9To.png") no-repeat;
+        }
+    .skink {
+            width: 65px;
+            height: 71px;
+            background: url("https://i.imgur.com/UafkveL.png") no-repeat;
+            position: absolute;
+            bottom: 92px;
+            left: 20px;
+            cursor: pointer;
+        }
+        .skink:hover {
+            background: url("https://i.imgur.com/wIuEGJT.png") no-repeat;
+        }
+    .swolfl3 {
+            width: 75px;
+            height: 48px;
+            background: url("https://i.imgur.com/P3uTZpu.png") no-repeat;
             position: absolute;
             bottom: 423px;
             right: 523px;
             cursor: pointer; 
         }
         .swolfl3:hover {
-            background: url("https://i.imgur.com/8De8Ubm.png") no-repeat;
+            background: url("https://i.imgur.com/V6D2Ufv.png") no-repeat;
+        }
+    .fish {
+            width: 87px;
+            height: 43px;
+            background: url("https://i.imgur.com/LTcNYHk.png") no-repeat;
+            position: absolute;
+            top: 223px;
+            left: 223px;
+            cursor: pointer; 
+        }
+        .fish:hover {
+            background: url("https://i.imgur.com/WQ1JZqS.png") no-repeat;
+        }
+    .trees {
+            width: 279px;
+            height: 602px;
+            background: url("https://i.imgur.com/J5Q0p9o.png") no-repeat;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            cursor: pointer; 
+        }
+        .trees:hover {
+            background: url("https://i.imgur.com/xkmK1Lj.png") no-repeat;
+        }
+    .owl {
+            width: 344px;
+            height: 344px;
+            background: url("https://i.imgur.com/Rz5z02m.png") no-repeat;
+            position: absolute;
+            top: 95px;
+            left: 15px;
+            cursor: pointer; 
+        }
+        .owl:hover {
+            background: url("https://i.imgur.com/JJT5ynn.png") no-repeat;
+        }
+    .mulpine {
+            width: 790px;
+            height: 347px;
+            background: url("https://i.imgur.com/KxOUjKb.png") no-repeat;
+            position: absolute;
+            top: 143px;
+            right: 0px;
+            cursor: pointer; 
+        }
+        .mulpine:hover {
+            background: url("https://i.imgur.com/EAof2AB.png") no-repeat;
         }
 
-        .navc {
+            /* End divs & nav */
+
+    .txte1 {
+            width: 556px;
+            height: 118px;
+            background: url("https://i.imgur.com/CDQEchx.png") no-repeat;
+            position: absolute;
+            bottom: 0px;
+            right: 385px;
+            cursor: pointer; 
+        }
+    .txte2 {
+            width: 367px;
+            height: 109px;
+            background: url("https://i.imgur.com/93BQMYk.png") no-repeat;
+            position: absolute;
+            bottom: 0px;
+            left: 440px;
+            cursor: pointer; 
+        }
+    .txte3 {
+            width: 473px;
+            height: 104px;
+            background: url("https://i.imgur.com/w7tvLsb.png") no-repeat;
+            position: absolute;
+            bottom: 0px;
+            right: 395px;
+            cursor: pointer; 
+        }
+    .txte4 {
+            width: 174px;
+            height: 89px;
+            background: url("https://i.imgur.com/hmmXbhx.png") no-repeat;
+            position: absolute;
+            bottom: 300px;
+            left: 515px;
+            cursor: pointer; 
+        }
+
+    .swocn {
+            width: 101px;
+            height: 261px;
+            background: url("https://i.imgur.com/k3ZfuPo.png") no-repeat;
+            position: absolute;
+            bottom: 275px;
+            left: 100px;
+            cursor: pointer; 
+        }
+        .swocn:hover {
+            background: url("https://i.imgur.com/os382bh.png") no-repeat;
+        }
+    .swsn {
+            width: 267px;
+            height: 252px;
+            background: url("https://i.imgur.com/H7Q3koy.png") no-repeat;
+            position: absolute;
+            bottom: 365px;
+            left: 387px;
+            cursor: pointer; 
+        }
+        .swsn:hover {
+            background: url("https://i.imgur.com/wGOf8oI.png") no-repeat;
+        }
+    .swnwn {
+            width: 291px;
+            height: 324px;
+            background: url("https://i.imgur.com/EzAT8M6.png") no-repeat;
+            position: absolute;
+            bottom: 230px;
+            left: 555px;
+            cursor: pointer; 
+        }
+        .swnwn:hover {
+            background: url("https://i.imgur.com/1vjDjyY.png") no-repeat;
+        }
+    .ndoor {
+            width: 106px;
+            height: 408px;
+            background: url("https://i.imgur.com/y0YxnJL.jpeg") no-repeat;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            cursor: pointer; 
+        }
+        .ndoor:hover {
+            background: url("https://i.imgur.com/FW4Pbxt.jpeg") no-repeat;
+        }
+    .fin {
+            position: absolute;
+            bottom: 0px;
+left:40%;        }
+
+    .navc {
             position: absolute;
             bottom: 59px;
             right: 62px;
-height:55px;
-width:57px;
-background: url("https://i.imgur.com/earjl4i.png") no-repeat;
-cursor: pointer;
+            height:55px;
+            width:57px;
+            background: url("https://i.imgur.com/earjl4i.png") no-repeat;
+            cursor: pointer;
         }
-.navn:hover, .navnw:hover, .navw:hover, .navsw:hover, .navs:hover, .navse:hover, .nave:hover, .navne:hover, .navc:hover { opacity: 70%; }
-.navn, .navnw, .navw, .navsw, .navs, .navse, .nave, .navne { opacity: 100%; }
+        .navn:hover, .navnw:hover, .navw:hover, .navsw:hover, .navs:hover, .navse:hover, .nave:hover, .navne:hover, .navc:hover, .txte1:hover, .txte2:hover, .txte3:hover, .txte4:hover { opacity: 70%; }
+        .navn, .navnw, .navw, .navsw, .navs, .navse, .nave, .navne { opacity: 100%; 
+        z-index:1;}
 
         .navn {
             position: absolute;
@@ -190,7 +861,7 @@ cursor: pointer;
 
         .navs {
             position: absolute;
-            bottom: 9px;
+            bottom: 4px;
             right: 80px;
         }
         .navse {
@@ -208,6 +879,15 @@ cursor: pointer;
             bottom: 97px;
             right: 41px;
         }
+        .textbox {
+            text-align:justify;
+            font-family: Courier New, Courier, monospace, serif;
+            font-size:13pt;
+            width:600px;
+            height:auto;
+            background-color: transparent;
+            margin: auto;
+        }
 
         .modal {
             display: none; 
@@ -220,6 +900,7 @@ cursor: pointer;
             padding: 20px;
             width: 400px;
             height: auto;
+            max-height:500px;
             color: #000;
             text-align:left;
             font-family: Courier New, Courier, monospace, serif;
@@ -230,6 +911,18 @@ cursor: pointer;
             font-size: 18px;
             margin-bottom: 10px;
         }
+    ::-webkit-scrollbar {
+            width: 10px;
+        }
+    ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+    ::-webkit-scrollbar-thumb {
+            background: #888; 
+    }
+    ::-webkit-scrollbar-thumb:hover {
+            background: #555; 
+    }
         .close-btn {
             cursor: pointer;
             color: #000;
@@ -251,28 +944,122 @@ cursor: pointer;
 <body>
 
 <div id="in1" class="scene active">
-Hello! This is my midterm project but it is not fully complete. I'm disabling the links for now, so that it's not seen in an incomplete state. It will be up in full by midnight tomorrow at the latest!
-    Thank you so much for the deadline extension, I really appreciate it!<p>
+<div class="textbox"> 
+    <h1>Welcome to Lone River</h1><br>
+    This is an interactive story! Your goal is to find anything that stands out in each scene. All clickable elements are reactive on hover. Highlight blocked text (<mark>like this</mark>) with your cursor to read it.
+    
+    <br><br>* Progress doesn't save. Refreshing the page will reset you to this page (it will be quick and easy to click back to wherever you were).
+    
+    <br><br>* This website is not designed to be mobile friendly. Please use a computer for the best experience. Best viewed in resolutions 1280 x 720 and larger.
+    
+    <br><br><a href="#in2" onclick="showScene('in2'); return false;">
+[Continue]
+    </a></div>
 </div>
 
 <div id="overlay" class="overlay" onclick="closeModal();"></div>
 
 <div id="in2" class="scene">
-intro page letter. now we're setting up the story. this will probably be an image<p>
-    <a href="#oc0" onclick="showScene('oc0'); return false;">
-Proceed to August?
-    </a>
-</div>
+<div class="textbox">
+    <br><br>Joel,<br><br>
 
-<div id="oc0" class="scene">
-    <div class="odoor" onclick="showScene('ic1'); return false;">
-    </div>
+Thank you for your willingness to fill in on such short notice! As you know, this project is part of a larger survey of wolves along the Minnesota-Ontario border. You will be in charge of observing and documenting the Lone River pack.<br><br>
+Since the previous Lone River team backed out of the project so suddenly, you will be on your own for the foreseeable future. I know you're more than capable, but do not hesitate to reach out if you need assistance with anything. I can send someone from another team your way.
+<br><br>
+In the last several years of documentation, we have seen this to be an average sized pack (~4-8 wolves) with a rather small territory. Much remains to be understood about their behavior. Of particular interest in the Lone River pack is the dispersal wolf that joined April of last year, since it's a bit atypical to see an adult wolf join a pack whose breeding pair is still active. You will find complete notes from the previous team in the cabin.
+<br><br>
+If you need anything, you know how to reach me. Glad to work with you again.
+<br><br>
+Best of luck,<br>
+Dr. Jeniffer Everett 
+<br><br>
+    <a href="#ic1" onclick="showScene('ic1'); return false;">
+[Begin]
+    </a></div>
 </div>
 
 <div id="ic1" class="scene">
-    <div class="idoor" onclick="showScene('oc1'); return false;">
+    <div class="idoor" onclick="showScene('oc1'); return false;"></div>
+    <div class="fplace1" onclick="showModal('fplace1m');"></div>
+    <div class="lantern" onclick="showModal('lanternm');"></div>
+    <div class="files" onclick="showModal('filesm');"></div>
+    <div class="blankets" onclick="showModal('blanketsm');"></div>
+    <div class="mug" onclick="showModal('mugm');"></div>
+
+</div>
+
+<div id="lanternm" class="modal">
+    <div class="modal-header">
+        <span class="close-btn" onclick="closeModal('lanternm');">&times;</span>
+        2nd August
+    </div>
+    <div class="modal-content">
+        There is a lantern sitting on the ledge by the fireplace. It's a bit old fashioned, but it will be nice if I need to go out at night.
     </div>
 </div>
+
+<div id="filesm" class="modal">
+    <div class="modal-header">
+        <span class="close-btn" onclick="closeModal('filesm');">&times;</span>
+        Wolf Notes
+    </div>
+    <div class="modal-content">
+            Current Pack Members, June 28th:<br><br>
+            Breeding Pair:<br>
+            LR46 (Thatch) Adult Female, 3 yrs<br>
+            LR19 (Bracken) Adult Male, 5 yrs<br>
+            <br>
+            Offspring:<br>
+            LR48 (Watercress) Adult Male, 2 yrs<br>
+            LR53 (Pine) Juvenile Female, 2 months<br>
+            LR54 (Cedar) Juvenile Male, 2 months<br>
+            LR55 (Mulberry) Juvenile Female, 2 months<br>
+            <br>
+            Dispersal:<br>
+            LR52 (Flax) Adult Male, est. 2 yrs<br>
+            <br>
+            Year updates:<br>
+            LR47 (Heather), LR49 (Thicket), and LR50 (Juneberry) vanished or did not survive to adulthood. LR51 (Moss) has dispersed and was located in the Wildgrove area. LR48 (Watercress) and LR52 (Flax) have both remained accompanying the breeding pair.
+            Thatch gave birth to her second litter in April, IDs LR53, LR54, and LR55. We nicknamed them Pine, Cedar, and Mulberry respectively. 
+            
+    </div>
+</div>
+
+<div id="blanketsm" class="modal">
+    <div class="modal-header">
+        <span class="close-btn" onclick="closeModal('blanketsm');">&times;</span>
+        2nd August
+    </div>
+    <div class="modal-content">
+        The cabin is well-stocked, and everything appears to be in working order, except a couple of outlets. Food supplies in particular will last well into the winter, which means I should be able to stay here for quite some time; the nearest town is about 100 miles away. I found a small stack of extra blankets by the fireplace, downy to the touch. It's not too cold yet, but these will be well appreciated when the temperature drops.    </div>
+</div>
+
+<div id="mugm" class="modal">
+    <div class="modal-header">
+        <span class="close-btn" onclick="closeModal('mugm');">&times;</span>
+        18th August
+    </div>
+    <div class="modal-content">
+        The coffee here is bitter but it's alright. I put in a little too much sugar this morning. It reminded me of that time you dumped half the jar in by accident. You and Casey dared me to drink it - I mean, it was more of a paste than a drink at that point - and laughed the whole time. 
+        <br><br>I miss your laugh.
+            </div>
+</div>
+
+
+<div id="fplace1m" class="modal">
+    <div class="modal-header">
+        <span class="close-btn" onclick="closeModal('fplace1m');">&times;</span>
+        <h1>Inner Cabin</h1>
+    </div>
+    <div class="modal-content">
+        <p>The month is August.</p>
+        <p>There are <mark>4</mark> notes to find here.<p>
+<p>Continue to September? You will not be able to return.</p>
+    <a href="#ic2" onclick="showScene('ic2');  closeModal('fplace1m'); return false;" style="display: block; text-align: center; margin: 10px 0;">   [ Proceed ]</a>
+    <a href="#ic1" onclick="showScene('ic1');  closeModal('fplace1m'); return false;" style="display: block; text-align: center; margin: 10px 0;">[ Go Back ]</a>
+    </div>
+</div>
+
 
 
 <div id="oc1" class="scene">
@@ -291,6 +1078,9 @@ Proceed to August?
 <div class="navc" onclick="showModal('oc1m');"></div>
     <div class="wolfoc1" onclick="showModal('wolfoc1m');"></div>
     <div class="crow" onclick="showModal('crowm');"></div>
+    <div class="tools" onclick="showModal('toolsm');"></div>
+    <div class="buckets" onclick="showModal('bucketsm');"></div>
+
 </div>
 
 
@@ -301,18 +1091,42 @@ Proceed to August?
     </div>
     <div class="modal-content">
 <p>The month is August.</p>
-        <p>There are <mark>3</mark> notes to find here.
+        <p>There are <mark>4</mark> notes to find here.
     </div>
 </div>
 
+<div id="toolsm" class="modal">
+    <div class="modal-header">
+        <span class="close-btn" onclick="closeModal('toolsm');">&times;</span>
+        3rd August
+    </div>
+    <div class="modal-content">
+        There are gardening tools resting against the cabin. They seem to be in fairly good condition, although I’m not sure I’ll need them for anything. 
+<br><br>
+        You were never very handy, but you’d always try your level best, and sometimes for hours, before asking anyone for help. Like that time I came to help you fix your car when the starter was out, and your hands were already caked in motor grease when I arrived. I admired that about you, that tenacity, but I worried you would never tell me when something was wrong.
+        <br><br>
+        I couldn’t find any signs of gardening around, so perhaps they were set outside because they weren’t needed. I’m bringing them back in to keep them safe.
+            </div>
+</div>
+
+<div id="bucketsm" class="modal">
+    <div class="modal-header">
+        <span class="close-btn" onclick="closeModal('bucketsm');">&times;</span>
+        3rd August
+    </div>
+    <div class="modal-content">
+        <p>The buckets lying out by the cabin were presumably used to fetch water from the stream at some point, but they've corroded and their insides are perforated with rust. I have running water in the cabin anyway, but I wonder how long these have been out here. I may bring them back into the storage closet; whoever was here last left a lot just lying around.
+
+    </div>
+</div>
 
 <div id="wolfoc1m" class="modal">
     <div class="modal-header">
         <span class="close-btn" onclick="closeModal('wolfoc1m');">&times;</span>
-        6th August
+        4th August
     </div>
     <div class="modal-content">
-        <p>first wolf sighting how exciting
+        Caught a glimpse of a couple wolves off by the river. They seemed to be following it eastward, which I believe leads to the lake, although I haven't been out that way quite yet. I can't yet tell them apart from a distance. They seemed large; possibly the parent pair. 
     </div>
 </div>
 
@@ -320,10 +1134,10 @@ Proceed to August?
 <div id="crowm" class="modal">
     <div class="modal-header">
         <span class="close-btn" onclick="closeModal('crowm');">&times;</span>
-        2nd August
+        22nd August
     </div>
     <div class="modal-content">
-        <p>a crow... suspicious
+        One dark and lone crow perched right on the cabin roof this morning. They ought to be fairly common in this area, rich as it is in wildlife, but this is the first I've seen. Framed as it was against the distant light coming through the treetops I thought it might be a sign of some kind, cloudy little creature of premonition. Whether a promise or an omen, I'm not sure.
     </div>
 </div>
 
@@ -344,6 +1158,9 @@ Proceed to August?
     </a>
 
 <div class="navc" onclick="showModal('s1m');"></div>
+<div class="stones" onclick="showModal('stonesm');"></div>
+<div class="deer" onclick="showModal('deerm');"></div>
+
 </div>
 
 
@@ -354,7 +1171,29 @@ Proceed to August?
     </div>
     <div class="modal-content">
 <p>The month is August.</p>
-        <p>There are <mark>3</mark> notes to find here.
+        <p>There are <mark>2</mark> notes to find here.
+    </div>
+</div>
+
+<div id="stonesm" class="modal">
+    <div class="modal-header">
+        <span class="close-btn" onclick="closeModal('stonesm');">&times;</span>
+        5th August
+    </div>
+    <div class="modal-content">
+        The larger stones lying in the center of the river create a convenient path across, not that it’s especially deep at this point. When I see something like this, I wonder whether it’s intentional, or whether they’ve fallen in such a way in some convenient cosmic circumstance. Or perhaps there really is an intentionality to nature, as some are inclined to say; some kind of underlying order that we can’t quite grasp. I wonder as much when I look at the wolves. How they’ve come to be just so from what they once were, little amorphous cells in a vast ocean of time.
+        <br><br>
+        Then I think, if it’s so intentional, how could it have gone so wrong for me?
+    </div>
+</div>
+
+<div id="deerm" class="modal">
+    <div class="modal-header">
+        <span class="close-btn" onclick="closeModal('deerm');">&times;</span>
+        14th August
+    </div>
+    <div class="modal-content">
+        There was a pair of deer out by the river today, presumably a mother and her adult child. They often stick together for a couple years before departing, not unlike wolves. I wonder if they realize what a dangerous area this is for them. But I suppose it isn’t really safe anywhere, to be such a creature of prey.
     </div>
 </div>
 
@@ -371,6 +1210,8 @@ Proceed to August?
         <img src="https://i.imgur.com/qKZMEx0.png" alt="Southeast">
     </a>
 <div class="navc" onclick="showModal('ww1m');"></div>
+<div class="cedar" onclick="showModal('cedarm');"></div>
+<div class="hollow" onclick="showModal('hollowm');"></div>
 </div>
 
 
@@ -381,10 +1222,32 @@ Proceed to August?
     </div>
     <div class="modal-content">
 <p>The month is August.</p>
-        <p>There are <mark>3</mark> notes to find here.
+        <p>There are <mark>2</mark> notes to find here.
     </div>
 </div>
 
+<div id="cedarm" class="modal">
+    <div class="modal-header">
+        <span class="close-btn" onclick="closeModal('cedarm');">&times;</span>
+        21st August
+    </div>
+    <div class="modal-content">
+        I spotted wolf LR54 today - that's Cedar. His coat is a lovely golden-brown shade, patterned with dark, rich hazel stripes. 
+        Lying as he is in that low rectangle of sun with his front half emblazoned gold and his back half in shadow, he reminds me of that Shinx you caught on my cartridge of <i>Pokemon Platinum.</i> I watched you run back and forth through the bright pixel grass, leaning up into the faded edge of my college dorm's green sofa. You can see it in that photo my sister took of us, the positions in which we were accustomed to lounging, habitually, just far enough apart. 
+        <br>"I think you're doing it wrong, Vik," I said, and you laughed and elbowed me gently.
+        <br>"You know it's just luck.”
+            </div>
+</div>
+
+<div id="hollowm" class="modal">
+    <div class="modal-header">
+        <span class="close-btn" onclick="closeModal('hollowm');">&times;</span>
+        13th August
+    </div>
+    <div class="modal-content">
+        According to the info sheets, this hollow is where the wolves had their den last April. They will have abandoned it now, and I haven’t seen a wolf actually go inside. However, the juveniles seem rather accustomed to roaming this area in the absence of their parents. Call of the familiar, I imagine. Home as a source of comfort, of safety. I wonder how that feels. 
+    </div>
+</div>
 
 <div id="l1" class="scene">
     <a href="#nw1" class="navnw" onclick="showScene('nw1'); return false;">
@@ -398,6 +1261,8 @@ Proceed to August?
         <img src="https://i.imgur.com/oVQeab2.png" alt="Southwest,">
     </a>
 <div class="navc" onclick="showModal('l1m');"></div>
+<div class="dragonflies" onclick="showModal('dragonfliesm');"></div>
+<div class="wolfl1" onclick="showModal('wolfl1m');"></div>
 </div>
 
 
@@ -408,8 +1273,29 @@ Proceed to August?
     </div>
     <div class="modal-content">
 <p>The month is August.</p>
-        <p>There are <mark>3</mark> notes to find here.
+        <p>There are <mark>2</mark> notes to find here.
     </div>
+</div>
+
+<div id="dragonfliesm" class="modal">
+    <div class="modal-header">
+        <span class="close-btn" onclick="closeModal('dragonfliesm');">&times;</span>
+        8th August
+    </div>
+    <div class="modal-content">
+        For all that I adore animals and nature, dragonflies scare me a bit. I’m not sure what it is; something about their erratic movement or their size, perhaps. But you’ve always loved them. Dragonflies, butterflies and bees. I never really tried talking you into studying biology with me, history buff that you are, but I think you would have enjoyed it. I’d say you could have been out here with me, too, but - well, you know. I’m sorry.            
+        </div>
+</div>
+
+<div id="wolfl1m" class="modal">
+    <div class="modal-header">
+        <span class="close-btn" onclick="closeModal('wolfl1m');">&times;</span>
+        29th August
+    </div>
+    <div class="modal-content">
+        I’ve gotten well enough at noting them from a distance to recognize these two as the breeding pair. It helps that they are wont to stick together, especially when out hunting. Bracken has striking patches of white in his coat, more than any of their offspring, who all seem to take after their mother. Her coat isn’t fully black and brown but it’s quite a bit darker than his, and the white is comparatively sparse. Apparently Thatch was an uncollared dispersal wolf, because they gave her a Lone River ID. She joined the pack two years back after the death of the previous female.
+        <br><br>I wonder what it would be like to live such a short life. There are probably no wolves alive who had been born before I first met you.                    
+        </div>
 </div>
 
 
@@ -426,7 +1312,8 @@ Proceed to August?
 
 <div class="navc" onclick="showModal('nw1m');"></div>
     <div class="swolfnw1" onclick="showModal('swolfnw1m');"></div>
-    <div class="chevril" onclick="showModal('chevrilm');"></div>
+    <div class="chervil" onclick="showModal('chervilm');"></div>
+    <div class="tracks" onclick="showModal('tracksm');"></div>
 </div>
 
 <div id="nw1m" class="modal">
@@ -444,48 +1331,632 @@ Proceed to August?
 <div id="swolfnw1m" class="modal">
     <div class="modal-header">
         <span class="close-btn" onclick="closeModal('swolfnw1m');">&times;</span>
-        9th August
+        12th August
     </div>
     <div class="modal-content">
-        <p>I think I've seen another wolf    </div>
+        I think I saw a dispersal wolf. There's no mention of one anywhere in the notes, so it must be new to the area. I believe it had a fully black coat, which is quite rare, but not unheard of, in Minnesota. I'm not sure, though. From so far away, I suppose it could have been Thatch in deep shadow.
+            
+        </div>
 </div>
 
 
-<div id="chevrilm" class="modal">
+<div id="chervilm" class="modal">
     <div class="modal-header">
-        <span class="close-btn" onclick="closeModal('chevrilm');">&times;</span>
+        <span class="close-btn" onclick="closeModal('chervilm');">&times;</span>
         25th August
     </div>
     <div class="modal-content">
-        <p>Clusters of wild chervil are blossoming at the edge of the woods. The indifferent wolves rush past, of course, but I stopped a while and watched them. From overhead the leaves patterned their petals with a trembling lattice of light and shadow. </p><p>
-It's not baby's breath, but it reminds me of that bouquet you gave me once; little stardust bursts of white clustered among the clover. And roses, of course, and lilies. I remember how they looked, pale and gleaming, lying in spades of glass against the cool blue-patterned tile. What a shame, I thought, but I should have known better. I was too young, back then. 
+        <p>Clusters of wild chervil are blossoming at the edge of the woods. The indifferent wolves rush past, fleet-footed, but I stood a while and watched them. From overhead the leaves patterned their petals with a trembling lattice of light and shadow. </p><p>
+It's not baby's breath, but it reminds me of that bouquet you gave me once; little stardust bursts of white clustered among the clover. And roses, of course, and lilies. I remember how they looked, pale and gleaming, lying in spades of glass against the cool blue-patterned tile. <i>What a shame,</i> I thought, but I should have known better. I was too young, back then. 
 </div>
 </div>
+
+<div id="tracksm" class="modal">
+    <div class="modal-header">
+        <span class="close-btn" onclick="closeModal('tracksm');">&times;</span>
+        10th August
+    </div>
+    <div class="modal-content">
+        It’s been rainy for the past couple of days, so every once in a while I’ll see tracks pressed into the forest floor. This trail is especially clear, heading off north toward their preferred hunting grounds. It was definitely one of the adults, as the juveniles are still noticeably smaller, but I can’t say which. One of these days I ought to grab a camera and follow them, but the foliage out there is very dense.            
+        </div>
+</div>
+
+
+<!--September-->
+
+
+<div id="ic2" class="scene">
+    <div class="idoor" onclick="showScene('oc2'); return false;"></div>
+    <div class="fplace2" onclick="showModal('fplace2m');"></div>
+    <div class="boots" onclick="showModal('bootsm');"></div>
+    <div class="cfphoto" onclick="showModal('cfphotom');"></div>
+    <div class="jvphoto" onclick="showModal('jvphotom');"></div>
+    <div class="mugs" onclick="showModal('mugsm');"></div>
+    <div class="envelope"></div>
+</div>
+
+<div id="bootsm" class="modal">
+    <div class="modal-header">
+        <span class="close-btn" onclick="closeModal('bootsm');">&times;</span>
+        4th September
+    </div>
+    <div class="modal-content">
+        I cleaned my boots this afternoon, and when I laid them near the door to dry I suddenly felt so sick to my stomach to look at them. We picked these out together a few years back, you and I, trying to find a pair that didn’t resemble the ones my dad always wore. We wandered the shoe store for a long time; my nervousness was setting us both on edge. Even in his absence he had the ability to keep us agitated. Afraid. They’re as different as they can be, I guess, but to a certain extent, all boots look the same.
+            
+        </div>
+</div>
+
+<div id="cfphotom" class="modal">
+    <div class="modal-header">
+        <span class="close-btn" onclick="closeModal('cfphotom');">&times;</span>
+        12th September
+    </div>
+    <div class="modal-content">
+        I’ve been going through the photos from the other team, and in these winter landscapes I’m noticing how much Flax and Watercress gravitate toward one another. I didn’t see them much in August, but they’ve been around a lot more lately. As Jen wrote, it is strange for Flax to have joined and stuck around given Bracken’s still well and around. Maybe he knows he’s older, but I don’t know. Something about this picture, the way they’re leaning into each other… it makes my heart ache.
+            
+        </div>
+</div>
+
+<div id="jvphotom" class="modal">
+    <div class="modal-header">
+        <span class="close-btn" onclick="closeModal('jvphotom');">&times;</span>
+        12th September
+    </div>
+    <div class="modal-content">
+        Kate took this photo of us back in college, the year we graduated. You and I in my small dormitory living room, where we hung out together between classes - much closer to campus than where you were living with your parents. I think you were laughing at something she said. I wasn’t paying attention - in the photo you can see me staring at you. 
+<br><br>
+        For those first few weeks there was some great novelty to me in being able to just look. To look at you, to really see you, without guilt or fear or shame. Even through the glossy emulsion I can see this kind of captivating radiance about you. It’s always been there, for as long as I’ve known you; even as a teenager, you were so, I don’t know, self-possessed. You gave me those flowers a week before you told me you were gay. Until then, I don’t think I’d ever thought about myself at all. 
+                    
+        </div>
+</div>
+
+<div id="mugsm" class="modal">
+    <div class="modal-header">
+        <span class="close-btn" onclick="closeModal('mugsm');">&times;</span>
+        15th September
+    </div>
+    <div class="modal-content">
+        We were only living together for a few months, but we’ve always been creatures of habit, and we fell so quickly into routine. I made the coffee in the morning, every morning, because I had to get up earlier, but mostly because I liked the sleepy smile you gave me when I brought it to you in bed. When I caught a cold you took over for those few mornings, and I still think about that. Certainly it shouldn’t have startled me, this kindness of yours, but then I’ve always been so accustomed to looking out for myself, alone.
+            
+        </div>
+</div>
+
+
+<div id="fplace2m" class="modal">
+    <div class="modal-header">
+        <span class="close-btn" onclick="closeModal('fplace2m');">&times;</span>
+        <h1>Inner Cabin</h1>
+    </div>
+    <div class="modal-content">
+        <p>The month is September.</p>
+        <p>There are <mark>4</mark> notes to find here.<p>
+<p>Continue to October? You will not be able to return.</p>
+    <a href="#ic3" onclick="showScene('ic3');  closeModal('fplace2m'); return false;" style="display: block; text-align: center; margin: 10px 0;">   [ Proceed ]</a>
+    <a href="#ic2" onclick="showScene('ic2');  closeModal('fplace2m'); return false;" style="display: block; text-align: center; margin: 10px 0;">[ Go Back ]</a>
+    </div>
+</div>
+
+
+
+<div id="oc2" class="scene">
+    <a href="#s2" class="navn" onclick="showScene('s2'); return false;">
+        <img src="https://i.imgur.com/Qv7MTLy.png" alt="North">
+    </a>
+    <a href="#ww2" class="navnw" onclick="showScene('ww2'); return false;">
+        <img src="https://i.imgur.com/dHOruss.png" alt="Northwest">
+    </a>
+    <a href="#l2" class="navne" onclick="showScene('l2'); return false;">
+        <img src="https://i.imgur.com/RnZXmsK.png" alt="Northeast">
+    </a>
+
+    <a href="#ic2" class="odoor" onclick="showScene('ic2'); return false;">
+    </a>
+<div class="navc" onclick="showModal('oc2m');"></div>
+<div class="logs" onclick="showModal('logsm');"></div>
+<div class="squirrels" onclick="showModal('squirrelsm');"></div>
+</div>
+
+<div id="oc2m" class="modal">
+    <div class="modal-header">
+        <span class="close-btn" onclick="closeModal('oc1m');">&times;</span>
+        <h1>Outer Cabin</h1>
+    </div>
+    <div class="modal-content">
+<p>The month is September.</p>
+        <p>There are <mark>2</mark> notes to find here.
+    </div>
+</div>
+
+<div id="logsm" class="modal">
+    <div class="modal-header">
+        <span class="close-btn" onclick="closeModal('logsm');">&times;</span>
+        19th September
+    </div>
+    <div class="modal-content">
+        I’ve been gathering up logs, trying to stockpile for the winter months. The previous team didn’t leave many. It’s been cold enough to light fires every night - the cabin doesn’t have central heating, and blankets alone aren’t cutting it anymore. There’s a space heater, at least, but I don’t want to wear it down. I’ll need it well and working when the snow comes.
+            
+        </div>
+</div>
+
+<div id="squirrelsm" class="modal">
+    <div class="modal-header">
+        <span class="close-btn" onclick="closeModal('squirrelsm');">&times;</span>
+        3rd September
+    </div>
+    <div class="modal-content">
+        The paired squirrels scamper over the tree branches in a last hustle for forage, busying themselves in winter preparations. Always on the move, these two, much like the ones that used to leap tree to tree in the parks we would go to to escape. In fact, I remember just such a pair dancing over the branches that time after we’d graduated high school, when atop the haphazard wooden benches we planned where we would go to college together. Perhaps it did to you, but really it never occurred to me, to go our separate ways.
+            
+        </div>
+</div>
+
+<div id="s2" class="scene">
+    <a href="#nw2" class="navn" onclick="showScene('nw2'); return false;">
+        <img src="https://i.imgur.com/Qv7MTLy.png" alt="North">
+    </a>
+    <a href="#ww2" class="navw" onclick="showScene('ww2'); return false;">
+        <img src="https://i.imgur.com/AGBbSsg.png" alt="West,">
+    </a>
+
+    <a href="#oc2" class="navs" onclick="showScene('oc2'); return false;">
+        <img src="https://i.imgur.com/qfDV1nd.png" alt="South,">
+    </a>
+    <a href="#l2" class="nave" onclick="showScene('l2'); return false;">
+        <img src="https://i.imgur.com/hJ7rFC6.png" alt="East,">
+    </a>
+
+<div class="navc" onclick="showModal('s2m');"></div>
+<div class="ducks" onclick="showModal('ducksm');"></div>
+<div class="stick" onclick="showModal('stickm');"></div>
+</div>
+
+
+<div id="s2m" class="modal">
+    <div class="modal-header">
+        <span class="close-btn" onclick="closeModal('s2m');">&times;</span>
+        <h1>River's Edge</h1>
+    </div>
+    <div class="modal-content">
+<p>The month is September.</p>
+        <p>There are <mark>2</mark> notes to find here.
+    </div>
+</div>
+
+<div id="ducksm" class="modal">
+    <div class="modal-header">
+        <span class="close-btn" onclick="closeModal('ducksm');">&times;</span>
+        15th September
+    </div>
+    <div class="modal-content">
+        There’s a pair of wood ducks out on the river, bobbing along in the steady current. There were many of these in the park as well. A mother and her ducklings came up to us once, right up to the edge of the pier, babbling and flipping their little tails. You ran up to the wooden fence and leaned over as far as you could, looking as if you’d leap into the water after them. I followed at a leisurely pace, and though I stopped to look at the ducks, for a moment I watched you watching them instead. The autumn weather had dusted your cheeks and nose with soft color, much like the tongues of the wolves when they loll back their heads and yawn.
+            
+        </div>
+</div>
+
+<div id="stickm" class="modal">
+    <div class="modal-header">
+        <span class="close-btn" onclick="closeModal('stickm');">&times;</span>
+        21st September
+    </div>
+    <div class="modal-content">
+        I’d guess that one of the wolves broke this stick, but it could have simply fallen and dashed onto a rock. It’s a little like a wishbone on one end, and I was struck by the sudden urge to snap it like one. There’s no one else around, though. I suppose I must keep my wishes to myself.
+            
+        </div>
+</div>
+
+
+<div id="ww2" class="scene">
+    <a href="#nw2" class="navne" onclick="showScene('nw2'); return false;">
+        <img src="https://i.imgur.com/RnZXmsK.png" alt="Northeast">
+    </a>
+    <a href="#s2" class="nave" onclick="showScene('s2'); return false;">
+        <img src="https://i.imgur.com/hJ7rFC6.png" alt="East">
+    </a>
+
+    <a href="#oc2" class="navse" onclick="showScene('oc2'); return false;">
+        <img src="https://i.imgur.com/qKZMEx0.png" alt="Southeast">
+    </a>
+<div class="navc" onclick="showModal('ww2m');"></div>
+<div class="swolfww2" onclick="showModal('swolfww2m');"></div>
+<div class="pack" onclick="showModal('packm');"></div>
+</div>
+
+
+<div id="ww2m" class="modal">
+    <div class="modal-header">
+        <span class="close-btn" onclick="closeModal('ww2m');">&times;</span>
+        <h1>West Woods</h1>
+    </div>
+    <div class="modal-content">
+<p>The month is September.</p>
+        <p>There are <mark>2</mark> notes to find here.
+    </div>
+</div>
+
+<div id="swolfww2m" class="modal">
+    <div class="modal-header">
+        <span class="close-btn" onclick="closeModal('swolfww2m');">&times;</span>
+        8th September
+    </div>
+    <div class="modal-content">
+        I’m definitely seeing an unfamiliar dispersal wolf, coat black as night all the way through. I’ve only seen it at a distance, really, but this is unmistakable. They haven’t attacked it for being on their territory, so maybe it’s been wandering around here a while. It’s always apart from the rest of the pack, though. I don't know, I guess they haven't really accepted it.  
+            
+        </div>
+</div>
+
+<div id="packm" class="modal">
+    <div class="modal-header">
+        <span class="close-btn" onclick="closeModal('packm');">&times;</span>
+        16th September
+    </div>
+    <div class="modal-content">
+        It was unusually hot this afternoon. The pack was gathered in the woods in full, all lazing in the shade. They make a pretty picture, all of them together, carefree and quiet. I thought of my parents and my sister, the way we looked around the dinner table; partitioned by our own habits, we were seated as far as possible apart. Kate and I would end up growing closer, but not until I moved out did we ever really talk about anything worthwhile. Mom and I had a mutual and quiet understanding, or so I felt, and in each other’s presence we’d mostly do our own things, read our own books - the comfort of presence freed from the effort of communication. And as for dad - the less said, the better.
+            
+        </div>
+</div>
+
+
+<div id="l2" class="scene">
+    <a href="#nw2" class="navnw" onclick="showScene('nw2'); return false;">
+        <img src="https://i.imgur.com/dHOruss.png" alt="Northwest">
+    </a>
+    <a href="#s2" class="navw" onclick="showScene('s2'); return false;">
+        <img src="https://i.imgur.com/AGBbSsg.png" alt="West,">
+    </a>
+
+    <a href="#oc2" class="navsw" onclick="showScene('oc2'); return false;">
+        <img src="https://i.imgur.com/oVQeab2.png" alt="Southwest,">
+    </a>
+<div class="navc" onclick="showModal('l2m');"></div>
+<div class="thatch" onclick="showModal('thatchm');"></div>
+<div class="swolfl2" onclick="showModal('swolfl2m');"></div>
+</div>
+
+
+<div id="l2m" class="modal">
+    <div class="modal-header">
+        <span class="close-btn" onclick="closeModal('l2m');">&times;</span>
+        <h1>Lakeside</h1>
+    </div>
+    <div class="modal-content">
+<p>The month is September.</p>
+        <p>There are <mark>2</mark> notes to find here.
+    </div>
+</div>
+
+<div id="swolfl2m" class="modal">
+    <div class="modal-header">
+        <span class="close-btn" onclick="closeModal('swolfl2m');">&times;</span>
+        22nd September
+    </div>
+    <div class="modal-content">
+        I think something is wrong here. I don't - I'm not really sure. It's quiet. That wolf out there, out there on the peninsula  - I'm not sure if it's a wolf. I'm not sure. It, I think it, I think it stood up on its hind legs, and I - 
+        <br><br>I mean, for a second, it looked almost human. 
+                    
+        </div>
+</div>
+
+<div id="thatchm" class="modal">
+    <div class="modal-header">
+        <span class="close-btn" onclick="closeModal('thatchm');">&times;</span>
+        1st September
+    </div>
+    <div class="modal-content">
+        Predation of fish is quite exciting behavior! It’s not unknown, but it’s very uncommon in the fall months, when deer are plentiful. I can’t ascribe motivations to a wolf, of course, but part of me wonders if she - Thatch, that is - did it just to show off. Just to prove she could catch one. And what a catch! A huge, gleaming salmon - how those scales glisten in the sunlight! 
+<br><br>
+        Watching her strut off proud and tall like that, somehow I felt like I’d caught it with her. Like there’s some triumph in being out here, something brilliant, something other than running away.
+            </div>
+</div>
+
 
 
 <div id="nw2" class="scene">
-    <a href="#s1" class="navs" onclick="showScene('s1'); return false;">
+    <a href="#s2" class="navs" onclick="showScene('s2'); return false;">
         <img src="https://i.imgur.com/qfDV1nd.png" alt="South,">
     </a>
-    <a href="#l1" class="navse" onclick="showScene('l1'); return false;">
+    <a href="#l2" class="navse" onclick="showScene('l2'); return false;">
         <img src="https://i.imgur.com/qKZMEx0.png" alt="Southeast">
     </a>
-    <a href="#ww1" class="navsw" onclick="showScene('ww1'); return false;">
+    <a href="#ww2" class="navsw" onclick="showScene('ww2'); return false;">
         <img src="https://i.imgur.com/oVQeab2.png" alt="Southwest,">
     </a>
 
-<div class="navc"></div>
+<div class="navc" onclick="showModal('nw2m');"></div>
     <div class="wolfnw2" onclick="showModal('wolfnw2m');"></div>
+    <div class="mulberry" onclick="showModal('mulberrym');"></div>
+
 </div>
+
+
+<div id="nw2m" class="modal">
+    <div class="modal-header">
+        <span class="close-btn" onclick="closeModal('nw2m');">&times;</span>
+        <h1>North Woods</h1>
+    </div>
+    <div class="modal-content">
+<p>The month is September.</p>
+        <p>There are <mark>2</mark> notes to find here.
+    </div>
+</div>
+
 
 <div id="wolfnw2m" class="modal">
     <div class="modal-header">
         <span class="close-btn" onclick="closeModal('wolfnw2m');">&times;</span>
-        23rd September
+        17th September
     </div>
     <div class="modal-content">
-        <p>It was cold this morning. I saw Cress and Flax curled up together, breathing in tandem in a clutch of reeds. Cress's snout was tucked up under Flax's chin with agonizing tenderness; nearby a moth made a pass at a pair of cattails. I think that's when I started crying.
-</p><p>How can you hold my hand the way you do and not feel like you're dying?</p>    </div>
+        I’ve been keeping an eye on these two. Something about them draws me in. Flax is the dispersal wolf, and strikingly different from the others; his coat is all white and gray, a lovely contrast against Cress’s black and brown and gold. Yesterday, I want to say, or the day before, I watched Flax strut right past the other wolves to flop down next to Cress and press his cheek up over the jut of his shoulderblade and rest his chin upon his back, and suddenly I was terrified for him.
+<br><br>
+        But today they’ve done it again, dozing in a low patch of sunlight among the others. I watched them and I thought, there are no rules to it, you know? The other wolves, they don't care at all. They don't even notice. 
+            
+</div>
+</div>
+
+<div id="mulberrym" class="modal">
+    <div class="modal-header">
+        <span class="close-btn" onclick="closeModal('mulberrym');">&times;</span>
+        17th September
+    </div>
+    <div class="modal-content">
+        Mulberry was hanging out by Flax and Cress. She’s a bit smaller than the other juveniles still, but not outside of the expected range. Despite her namesake, her coat is largely brown, with spatterings of black on her muzzle and back. She’s not purple, of course.
+<br><br>
+        Not like the cool glow of the dance hall which floated lazily up your blazer and clean cut slacks, back in our senior year of high school. We had both gone stag, and seated at a low table we watched our friends twirl in glimmering pairs, heels and dress shoes clicking on the polished floor. 
+        <br><br>
+ 
+        "I need some air." You grabbed my wrist to tug me along; when we were outside your hand slipped into my palm.
+        <br><br>
+
+        That night, I think, that night has stuck in my mind as a perfect picture of youth, ecstatic and unburdened, running loose-limbed through the golden hour in our soft cotton button-downs. We were free, I thought, and I told you so. But we left that dance, didn't we? 
+        <br><br>
+
+        We knew it even then. That we were supposed to be scared. 
+        </div>
+</div>
+
+
+<!--October-->
+
+<div id="ic3" class="scene">
+    <div class="idoor" onclick="showScene('oc3'); return false;"></div>
+    <div class="fplace3" onclick="showModal('fplace3m');"></div>
+    <div class="swolfic3" onclick="showModal('swolf1c3m');"></div>
+    <div class="spill" onclick="showModal('spillm');"></div>
+    <div class="letters" onclick="showModal('lettersm');"></div>
+    <div class="blankets2" onclick="showModal('blankets2m');"></div>
+</div>
+
+<div id="swolf1c3m" class="modal">
+    <div class="modal-header">
+        <span class="close-btn" onclick="closeModal('swolf1c3m');">&times;</span>
+        9th October
+    </div>
+    <div class="modal-content">
+        “Aren't you afraid?” 
+<br><br>
+        Remember that? I asked you that, once. We were out among the shops, wide streets slick with tarry asphalt, sunlight-patterned green awnings; my hands were trembling in my pockets.
+        <br><br> 
+        “Not really,” you said, clinging to my arm as lovers do. In that moment, your warmth emboldened me. But a year later, when we moved in together, you told the landlord we were friends. 
+                    
+        </div>
+</div>
+
+<div id="spillm" class="modal">
+    <div class="modal-header">
+        <span class="close-btn" onclick="closeModal('spillm');">&times;</span>
+        19th October
+    </div>
+    <div class="modal-content">
+        I heard a wolf cry outside, and in my startled leap I spilled the coffee over the edge of the table. I watched it pool on the floor for a moment, and I was struck by the sudden thought that it, seeping into those floorboards, would be alchemically changed somehow. Altered into blood, or mercury, or starlight. But the stain is still there, and it’s just coffee. Just coffee.
+            
+        </div>
+</div>
+
+<div id="blankets2m" class="modal">
+    <div class="modal-header">
+        <span class="close-btn" onclick="closeModal('blankets2m');">&times;</span>
+        3rd October
+    </div>
+    <div class="modal-content">
+        I've taken to sleeping up near the fireplace. The bedroom feels strange. Like it’s the wrong way around. Even in the morning, when light spilling in from the window pools into squares on the floor, I know it’s not really warmth. I know it will feel cold. I can’t bear to be in there any longer.
+            
+        </div>
+</div>
+
+<div id="lettersm" class="modal">
+    <div class="modal-header">
+        <span class="close-btn" onclick="closeModal('lettersm');">&times;</span>
+        25th October
+    </div>
+    <div class="modal-content">
+        All I do these days is write, but for you, somehow, I’m all out of words. I can only think of so many ways to say I miss you. 
+            
+        </div>
+</div>
+
+<div id="fplace3m" class="modal">
+    <div class="modal-header">
+        <span class="close-btn" onclick="closeModal('fplace3m');">&times;</span>
+        <h1>Inner Cabin</h1>
+    </div>
+    <div class="modal-content">
+        <p>The month is October.</p>
+        <p>There are <mark>4</mark> notes to find here.<p>
+<p>Continue to night? You will not be able to return.</p>
+    <a href="#icn" onclick="showScene('icn');  closeModal('fplace3m'); return false;" style="display: block; text-align: center; margin: 10px 0;">   [ Proceed ]</a>
+    <a href="#ic3" onclick="showScene('ic3');  closeModal('fplace3m'); return false;" style="display: block; text-align: center; margin: 10px 0;">[ Go Back ]</a>
+    </div></div>
+
+
+<div id="oc3" class="scene">
+    <a href="#s3" class="navn" onclick="showScene('s3'); return false;">
+        <img src="https://i.imgur.com/Qv7MTLy.png" alt="North">
+    </a>
+    <a href="#ww3" class="navnw" onclick="showScene('ww3'); return false;">
+        <img src="https://i.imgur.com/dHOruss.png" alt="Northwest">
+    </a>
+    <a href="#l3" class="navne" onclick="showScene('l3'); return false;">
+        <img src="https://i.imgur.com/RnZXmsK.png" alt="Northeast">
+    </a>
+
+    <a href="#ic3" class="odoor" onclick="showScene('ic3'); return false;">
+    </a>
+<div class="navc" onclick="showModal('oc3m');"></div>
+<div class="swolfoc3" onclick="showModal('swolfoc3m');"></div>
+<div class="chair" onclick="showModal('chairm');"></div>
+</div>
+
+<div id="oc3m" class="modal">
+    <div class="modal-header">
+        <span class="close-btn" onclick="closeModal('oc3m');">&times;</span>
+        <h1>Outer Cabin</h1>
+    </div>
+    <div class="modal-content">
+<p>The month is October.</p>
+        <p>There are <mark>2</mark> notes to find here.
+    </div>
+</div>
+
+<div id="swolfoc3m" class="modal">
+    <div class="modal-header">
+        <span class="close-btn" onclick="closeModal('swolfoc3m');">&times;</span>
+        6th October
+    </div>
+    <div class="modal-content">
+        I saw that wolf again. Standing against the cabin, staring out into the distance, thinking of you… and there it was. It stood still, watching in my direction - perhaps it saw me, because neither of us moved for a long time. 
+        <br><br>Finally, it bowed its head and turned away, trudging doggedly through the underbrush. At the river it stopped a moment and stood in silence, and I had the strangest feeling the wolf was weeping…
+                    
+        </div>
+</div>
+
+<div id="chairm" class="modal">
+    <div class="modal-header">
+        <span class="close-btn" onclick="closeModal('chairm');">&times;</span>
+        21st October
+    </div>
+    <div class="modal-content">
+        The chair must have been old, because the leg just snapped off when I sat down the other day. I could have tossed it into the fire - perhaps I should have. But some irrational part of me looked at it and thought it could still be fixed, so I dragged it outside for safekeeping, for now. I mean, there has to be hope, right? We can still fix it, right?
+            
+        </div>
+</div>
+
+
+<div id="s3" class="scene">
+    <a href="#nw3" class="navn" onclick="showScene('nw3'); return false;">
+        <img src="https://i.imgur.com/Qv7MTLy.png" alt="North">
+    </a>
+    <a href="#ww3" class="navw" onclick="showScene('ww3'); return false;">
+        <img src="https://i.imgur.com/AGBbSsg.png" alt="West,">
+    </a>
+
+    <a href="#oc3" class="navs" onclick="showScene('oc3'); return false;">
+        <img src="https://i.imgur.com/qfDV1nd.png" alt="South,">
+    </a>
+    <a href="#l3" class="nave" onclick="showScene('l3'); return false;">
+        <img src="https://i.imgur.com/hJ7rFC6.png" alt="East,">
+    </a>
+
+<div class="navc" onclick="showModal('s3m');"></div>
+<div class="cfwrestle" onclick="showModal('cfwrestlem');"></div>
+<div class="bones" onclick="showModal('bonesm');"></div>
+</div>
+
+
+<div id="s3m" class="modal">
+    <div class="modal-header">
+        <span class="close-btn" onclick="closeModal('s3m');">&times;</span>
+        <h1>River's Edge</h1>
+    </div>
+    <div class="modal-content">
+<p>The month is October.</p>
+        <p>There are <mark>2</mark> notes to find here.
+    </div>
+</div>
+
+<div id="cfwrestlem" class="modal">
+    <div class="modal-header">
+        <span class="close-btn" onclick="closeModal('cfwrestlem');">&times;</span>
+        29th October
+    </div>
+    <div class="modal-content">
+        I wish I hadn't said it. I wish I hadn't - god! Do you remember when we were boys in gym class and I slipped on the hardwood and you caught me, but you weren't strong enough, and we fell together? I don't want to keep falling with you, Viktor! I don't want to keep dragging you down! And I can't, I don't know how to say any of this to you - I don't know if we can fix this. And here I am in the woods, running away again. The wolves are at my doorstep. Viktor, if we got to start over again, what would we do? What would we ever do? Weren't we doomed from the start?
+            
+        </div>
+</div>
+
+<div id="bonesm" class="modal">
+    <div class="modal-header">
+        <span class="close-btn" onclick="closeModal('bonesm');">&times;</span>
+        16th October
+    </div>
+    <div class="modal-content">
+        One of the wolves must have killed a crow. The bones, picked clean, lie by the riverside in hollow despair. There have been a lot of bones lately. Nature is cruel, unyielding. Statistically, only one of the juveniles will survive the winter.
+            
+        </div>
+</div>
+
+
+<div id="ww3" class="scene">
+    <a href="#nw3" class="navne" onclick="showScene('nw3'); return false;">
+        <img src="https://i.imgur.com/RnZXmsK.png" alt="Northeast">
+    </a>
+    <a href="#s3" class="nave" onclick="showScene('s3'); return false;">
+        <img src="https://i.imgur.com/hJ7rFC6.png" alt="East">
+    </a>
+
+    <a href="#oc3" class="navse" onclick="showScene('oc3'); return false;">
+        <img src="https://i.imgur.com/qKZMEx0.png" alt="Southeast">
+    </a>
+<div class="navc" onclick="showModal('ww3m');"></div>
+<div class="squirrel" onclick="showModal('squirrelm');"></div>
+<div class="swolfww3" onclick="showModal('swolfww3m');"></div>
+<div class="skink" onclick="showModal('skinkm');"></div>
+</div>
+
+
+<div id="ww3m" class="modal">
+    <div class="modal-header">
+        <span class="close-btn" onclick="closeModal('ww3m');">&times;</span>
+        <h1>West Woods</h1>
+    </div>
+    <div class="modal-content">
+<p>The month is October.</p>
+        <p>There are <mark>3</mark> notes to find here.
+    </div>
+</div>
+
+<div id="squirrelm" class="modal">
+    <div class="modal-header">
+        <span class="close-btn" onclick="closeModal('squirrelm');">&times;</span>
+        11th October
+    </div>
+    <div class="modal-content">
+        <p>I’ve only seen this one alone recently. It seems to have lost its mate. Hiding in a little hollow high up the tree, this one does its level best to stay safe. Not everyone is so lucky.
+        </div>
+</div>
+
+<div id="swolfww3m" class="modal">
+    <div class="modal-header">
+        <span class="close-btn" onclick="closeModal('swolfww3m');">&times;</span>
+        14th October
+    </div>
+    <div class="modal-content">
+        It wasn't just my dad, Viktor. When he flung the vase to the floor I saw myself fragmented and reflected in every shard of glass as I bent down; time drew still, and in that moment I suddenly realized we were everywhere, he and I. Rabbit and wolf. 
+        <br><br>The wolves don't really have any predators to contend with, in this lonely neck of Minnesota wood. But I do. Everywhere I go, I do. I feel like I can't stop running.
+        <br><br>This world wasn't made for people like us. 
+            
+
+        </div>
+</div>
+
+<div id="skinkm" class="modal">
+    <div class="modal-header">
+        <span class="close-btn" onclick="closeModal('skinkm');">&times;</span>
+        13th October
+    </div>
+    <div class="modal-content">
+        This skink, crawling up the rock, sunned itself for a lonely hour in the cold October daylight. I watched it, cold-blooded thing, sluggish even at midday, crawling toward some uncertain future. Why bother? Why gather sunlight when winter is always around the corner?
+            
+        </div>
 </div>
 
 
@@ -500,11 +1971,22 @@ It's not baby's breath, but it reminds me of that bouquet you gave me once; litt
     <a href="#oc3" class="navsw" onclick="showScene('oc3'); return false;">
         <img src="https://i.imgur.com/oVQeab2.png" alt="Southwest,">
     </a>
-<div class="navc"></div>
+    <div class="navc" onclick="showModal('l3m');"></div>
     <div class="swolfl3" onclick="showModal('swolf13m');"></div>
-</div>
+    <div class="fish" onclick="showModal('fishm');"></div>
+    <div class="trees" onclick="showModal('treesm');"></div>
 </div>
 
+<div id="l3m" class="modal">
+    <div class="modal-header">
+        <span class="close-btn" onclick="closeModal('l3m');">&times;</span>
+        <h1>Lakeside</h1>
+    </div>
+    <div class="modal-content">
+<p>The month is October.</p>
+        <p>There are <mark>3</mark> notes to find here.
+    </div>
+</div>
 
 <div id="swolf13m" class="modal">
     <div class="modal-header">
@@ -512,12 +1994,192 @@ It's not baby's breath, but it reminds me of that bouquet you gave me once; litt
         8th October
     </div>
     <div class="modal-content">
-        <p><img src="https://i.imgur.com/c9Jvfmi.png" width="400"></p><p>
-The water is clear and still. I can see myself reflected with startling clarity; it's been a while since I've seen a person's face. Across the lake lies only open forest, deep blue pines and an empty sun.</p>
+        <p><img src="https://i.imgur.com/Obi43jS.png" width="400"></p><p>
+The water is blue and still. I can see myself reflected with startling clarity; it's been a while since I've seen a person's face. Across the lake lies only open forest, deep blue pines and an empty sun.</p>
 The wolves are out today. Gone, I mean. Perhaps they, too, have run to lonelier forests, to solitude, to sorrow, from sorrow. So it goes.
     </div>
 </div>
 
+<div id="fishm" class="modal">
+    <div class="modal-header">
+        <span class="close-btn" onclick="closeModal('fishm');">&times;</span>
+        10th October
+    </div>
+    <div class="modal-content">
+        I saw a fish leap out from the depths and suddenly remembered there was a world down there, wholly its own, untethered from our reality. I stood over the edge of the lake and tried to piece it together, in the silt at the bottom, rushlight, murky shapes, wavering patterns of grave dirt. I had to step back; I don’t belong there. I don’t belong anywhere. 
+            
+        </div>
+</div>
+
+<div id="treesm" class="modal">
+    <div class="modal-header">
+        <span class="close-btn" onclick="closeModal('treesm');">&times;</span>
+        5th October
+    </div>
+    <div class="modal-content">
+        Most of the trees don't have many branches, as is common in clusters of paper birch. But these lakeside spruces are well-armed. The more I look at them, the more I feel their skeletal desperation, aching, reaching.
+            
+        </div>
+</div>
+
+
+<div id="nw3" class="scene">
+    <a href="#s3" class="navs" onclick="showScene('s3'); return false;">
+        <img src="https://i.imgur.com/qfDV1nd.png" alt="South,">
+    </a>
+    <a href="#l3" class="navse" onclick="showScene('l3'); return false;">
+        <img src="https://i.imgur.com/qKZMEx0.png" alt="Southeast">
+    </a>
+    <a href="#ww3" class="navsw" onclick="showScene('ww3'); return false;">
+        <img src="https://i.imgur.com/oVQeab2.png" alt="Southwest,">
+    </a>
+
+<div class="navc" onclick="showModal('nw3m');"></div>
+<div class="owl" onclick="showModal('owlm');"></div>
+<div class="mulpine" onclick="showModal('mulpinem');"></div>
+
+</div>
+
+
+<div id="nw3m" class="modal">
+    <div class="modal-header">
+        <span class="close-btn" onclick="closeModal('nw3m');">&times;</span>
+        <h1>North Woods</h1>
+    </div>
+    <div class="modal-content">
+<p>The month is October.</p>
+        <p>There are <mark>2</mark> notes to find here.
+    </div>
+</div>
+
+<div id="owlm" class="modal">
+    <div class="modal-header">
+        <span class="close-btn" onclick="closeModal('owlm');">&times;</span>
+        9th October
+    </div>
+    <div class="modal-content">
+        This horned owl swooped down from the trees in a blaze of feathers, careering into the brush for something I couldn’t see; but when it came back up, there was no creature in its talons. Abruptly I felt the sting of its failure. How could it have put up such an impressive display and come up empty?
+            
+        </div>
+</div>
+
+<div id="mulpinem" class="modal">
+    <div class="modal-header">
+        <span class="close-btn" onclick="closeModal('mulpinem');">&times;</span>
+        26th October
+    </div>
+    <div class="modal-content">
+        How old were we when we met? 15? 16? You were out in the garden, and I saw you over the fence - boys in apple tree shade. Over the years we grew together, and you, your fire and light - something in you changed. And reflecting you, I changed too, in a slow, glossy cascade.
+<br><br>
+        Are we moving toward the inevitable, or are we falling away? Is there a difference?
+                    
+        </div>
+</div>
+
+<div id="icn" class="scene">
+    <div class="lantern" onclick="showModal('lantern2m'); return false;"></div>
+    <div class="ndoor" onclick="showModal('ndoorm');"></div>
+    </div>
+
+<div id="lantern2m" class="modal">
+    <div class="modal-header">
+        <span class="close-btn" onclick="closeModal('lantern2m');">&times;</span>
+        30th October
+    </div>
+    <div class="modal-content">
+        I don’t know what to think anymore. I have to, I think I have to go see. I have to do something. Alone in the darkness I listen to this wolf howl and I hear the way you cried when I told you I was leaving.
+<br><br>
+            <a href="#ocn" onclick="showScene('ocn'); closeModal('lantern2m'); return false;">[Go out]</a></div>
+</div>
+
+<div id="ndoorm" class="modal">
+    <div class="modal-header">
+        <span class="close-btn" onclick="closeModal('ndoorm');">&times;</span>
+        30th October
+    </div>
+    <div class="modal-content">
+        There’s something, I think there’s a wolf at the door. At the door. I heard the scratching, the howling, this has never happened. They don’t come here. I’m terrified, but I - this is my job, isn’t it? It’s so dark out there. So dark.
+</div>
+</div>
+
+<div id="ocn" class="scene">
+    <div class="swocn" onclick="showModal('ocnm');"></div>
+    </div>
+
+    <div id="ocnm" class="modal">
+        <div class="modal-header">
+            <span class="close-btn" onclick="closeModal('ocnm');">&times;</span>
+            30th October
+        </div>
+        <div class="modal-content">
+            It wasn’t any one thing, really, Viktor. But I’ll tell you - it wasn’t just my dad. We were on the northbound train just passing Saint Cloud and you had fallen asleep, your cheek on my shoulder, a hand in my lap, breathing softly under the railway hum. A woman walked past and gave us such a pointed look of disgust. A long, drawn-out space of silence. And I just, I felt like, we weren’t even doing anything. She didn’t even know us. I’m just tired, Viktor. I can’t do it anymore.
+<br><br>
+My dad left me a voicemail, the week before I left. I’m not sure who told him. He threatened to hurt me, to hurt you. So maybe it was because of him. But this is what I mean, Viktor; he isn’t the only one. There are so many people who hate us. 
+
+            <br><br><a href="#sn" onclick="showScene('sn'); closeModal('ocnm'); return false;">[Keep going]</a></div>
+                
+            </div>
+    </div>
+
+<div id="sn" class="scene">
+    <div class="swsn" onclick="showModal('snm');"></div>
+    </div>
+
+    <div id="snm" class="modal">
+        <div class="modal-header">
+            <span class="close-btn" onclick="closeModal('snm');">&times;</span>
+            30th October
+        </div>
+        <div class="modal-content">
+            And I miss you. I mean I miss you so fiercely I sometimes feel as if I’ve lost a part of myself. How long have we known each other? Ten years now? How young we were back then! I wish it were different. Really, I do. I’m sorry. I’m sorry, but I’m scared. 
+<br><br>
+The other day I saw Cress and Flax curled up together, breathing in tandem in a clutch of oak fern. Cress's snout was tucked up under Flax's chin with agonizing tenderness; nearby a moth made a pass at a cluster of bluebells. I think that's when I started crying. 
+<br><br>How can you hold my hand the way you do and not feel like you're dying?
+
+            <br><br><a href="#nwn" onclick="showScene('nwn'); closeModal('snm'); return false;">[Keep going]</a></div>
+                
+            </div>
+    </div>
+
+<div id="nwn" class="scene">
+    <div class="swnwn" onclick="showModal('nwnm');"></div>
+    </div>
+
+    <div id="nwnm" class="modal">
+        <div class="modal-header">
+            <span class="close-btn" onclick="closeModal('nwnm');">&times;</span>
+            30th October
+        </div>
+        <div class="modal-content">
+            I watched them so often these last few months. I watched them over and over, soft-footed and bushy-tailed, draw together and apart, and back together. Never so far apart that they couldn’t - that they couldn’t find each other. That they couldn’t wrestle or chase or hunt or nap, stumbling or leaping, frightened or furious, reckless, joyous in play, slow-beating hearts intertwined. 
+<br><br>I watched them and I thought, only for a moment, I thought - are we really rabbits? Or are we wolves, too? I watched them for a moment and the world drew still around me, and Flax trotted over to Cress and threw the weight of his body into his shoulder, and there on the forest floor they lounged in the sunlight, among the blossoms like dusty little stars.
+
+            <br><br><a href="#e1" onclick="showScene('e1'); closeModal('nwnm'); return false;">[Keep going]</a></div>
+                
+            </div>
+    </div>
+
+<div id="e1" class="scene">
+    <div class="txte1" onclick="showScene('e2'); return false;"></div>
+    </div>
+    
+<div id="e2" class="scene">
+    <div class="txte2" onclick="showScene('e3'); return false;"></div>
+    </div>
+
+<div id="e3" class="scene">
+    <div class="txte3" onclick="showScene('e4'); return false;"></div>
+    </div>
+
+<div id="e4" class="scene">
+    <div class="txte4" onclick="showScene('e5'); return false;"></div>
+    </div>
+    
+<div id="e5" class="scene">
+    <br><br><br><br>
+    <div class="textbox"><h1>Thank you for reading!</h1></div>
+<img src="https://i.imgur.com/A64IGsz.png" width="600" class="fin">
+    </div>
 
 <script>
     function showScene(sceneId) {
